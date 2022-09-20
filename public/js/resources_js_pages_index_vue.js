@@ -144,7 +144,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this3.showDeleteAlert = false;
 
                 if (!data.answer) {
-                  _context3.next = 7;
+                  _context3.next = 9;
                   break;
                 }
 
@@ -155,15 +155,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 5:
                 response = _context3.sent;
 
-                if (response.data.success) {
-                  _this3.libraries[_this3.library].books.splice(_this3.book, 1);
+                if (!response.data.success) {
+                  _context3.next = 9;
+                  break;
                 }
 
-              case 7:
+                _context3.next = 9;
+                return _this3.getLibraries();
+
+              case 9:
                 _this3.library = null;
                 _this3.book = null;
 
-              case 9:
+              case 11:
               case "end":
                 return _context3.stop();
             }

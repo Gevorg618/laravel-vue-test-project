@@ -18,17 +18,22 @@ class LibraryController extends Controller
     {
         $libraries = $libraryRepository->getAll(['books.likes']);
 
+        $response = [];
         foreach ($libraries as $library) {
-            foreach ($library->books as $book) {
-                $book->liked = false;
-                foreach ($book->likes as $like) {
-                    if ($like->user_id === auth()->id()) {
-                        $book->liked = true;
+            if (!$library->books->isEmpty()) {
+                foreach ($library->books as $book) {
+                    $book->liked = false;
+                    foreach ($book->likes as $like) {
+                        if ($like->user_id === auth()->id()) {
+                            $book->liked = true;
+                        }
                     }
                 }
+                $response[] = $library;
             }
+
         }
-        return LibraryResponseResource::collection($libraries);
+        return LibraryResponseResource::collection($response);
     }
 
     /**

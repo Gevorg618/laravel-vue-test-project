@@ -101,7 +101,7 @@ export default {
                 let response = await this.$store.dispatch('deleteBook', book.id)
 
                 if (response.data.success) {
-                    this.libraries[this.library].books.splice(this.book,1)
+                    await this.getLibraries()
                 }
             }
             this.library = null

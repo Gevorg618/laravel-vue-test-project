@@ -36,4 +36,7 @@ export default {
 .page-content {
     margin-top: 150px;
 }
+#scrolling-techniques-2 {
+    min-height: 90%;
+}
 </style>

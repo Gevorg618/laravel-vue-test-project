@@ -368,7 +368,7 @@ var render = function render() {
           return _vm.showConfirmAlert(bookKey);
         }
       }
-    }, [_c("v-icon", [_vm._v("mdi-delete")]), _vm._v(" "), _c("span", [_vm._v(_vm._s(book.id))])], 1) : _vm._e(), _vm._v(" "), _c("v-btn", {
+    }, [_c("v-icon", [_vm._v("mdi-delete")])], 1) : _vm._e(), _vm._v(" "), _c("v-btn", {
       staticClass: "ma-2",
       attrs: _defineProperty({
         text: "",

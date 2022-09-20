@@ -69,7 +69,6 @@
                                     v-if="book.user_id == authId"
                                 >
                                     <v-icon>mdi-delete</v-icon>
-                                    <span>{{book.id}}</span>
                                 </v-btn>
 
                                 <v-btn
