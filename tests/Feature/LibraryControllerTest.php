@@ -59,7 +59,7 @@ class LibraryControllerTest extends TestCase
         $response->assertJsonFragment(['id' => $library->id]);
         $response->assertJsonFragment(['id' => $book->id]);
         $response->assertJsonFragment(['name' => $library->name]);
-        $response->assertJsonFragment(['existing_count' => 16]);
+        $response->assertJsonFragment(['existing_count' => 15]);
     }
 
 }
